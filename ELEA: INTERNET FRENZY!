@@ -1,0 +1,2004 @@
+'''
+Natalie Tsui
+Create Your Own Adventure Assignment
+Start Date: October 2nd, 2024
+Due Date: October 9, 2024
+
+GAME NAME: ELEA: INTERNET FRENZY
+
+ALL ENDINGS AND LONG DIALOGUE ARE DEFINED AS FUNCTIONS!
+THIS WAY, THERE IS NOT HUGE BODIES OF TEXT IN THE ACTUAL GAMEPLAY CODE ITSELF
+THIS MAKES THIS NEATER, AND IS EASIER FOR ME TO FIX ANY TEXT!
+
+Game text progresses by pressing ENTER key!
+
+'''
+
+# INTRO TO GAME + GOAL IN THE GAME
+def elea_intro():
+    print("ELEA: INTERNET FRENZY (Press Enter!)")
+    input()
+    print("Everything in this game is purely fictional!")
+    input()
+    print("Some game pathway formats are based on the game NEEDY STREAMER OVERLOAD.")
+    input()
+    print("The point of this game is to get ELEA to last 1 story year (4 playable days)")
+    print("in the streaming industry without causing ELEA to go INTERNET FRENZY.")
+    input()
+    print("The FRENZY bar starts at 5!")
+    input()
+    print("Your goal is to keep it under 50, where ELEA turns INTERNET FRENZY once the bar reaches 50!")
+    input()
+    print("There will be warnings for your FRENZY bar once it reaches 40.")
+    input()
+    print("Reaching FRENZY 50 will automatically result in GAME OVER ending that day.")
+    input()
+    print("FRENZY WILL NEVER DECREASE!! Pick what ELEA does wisely.")
+    input()
+    print("Once you reach DAY 5, based on your FRENZY level, you can get different final endings!")
+    input()
+    print("Good luck! Let's make ELEA live her best late teenage life as a virtual streamer.")
+    input() 
+
+# FUNCTION - SLEEP option 
+def sleep_option():
+    input()
+    print("I should sleep so I have more energy.")
+    input()
+    print("...zzz...")
+    input()
+
+# FUNCTION - STREAM BAD END DAY 1: STREAM! STREAM! STREAM!
+def stream_end_day_one():
+    print("Forever…  people phrasing me forever…")
+    input()
+    
+    # USER ENTERS A VALUE FOR HOW MANY MORE TIMES ELEA SHOULD STREAM AGAIN (DOES NOT IMPACT STORY)
+    stream_again1 = int(input("How many times should ELEA stream again?"))
+    while stream_again1 < 1:
+        print("Please enter a positive number!")
+        stream_again1 = int(input("How many times should ELEA stream again? (6 hours per stream) "))
+    
+    # BAD STREAM END DAY 1
+    else: 
+        print("...")
+        input()
+        print(str(stream_again1*6) + " hours of streaming even though I just started streaming today, and more and more people already started to say they love me… hahaha!!!")  
+        input()
+        print("...")
+        input()
+        print("FRENZY OVERLOAD!")
+        input()
+        print("BAD STREAM END DAY 1: FRENZIED ON DAY ONE")  
+        input()
+        print("STREAM! STREAM! STREAM!")
+        input()
+        print("No matter her goals, she fed into her temptation for attention and endless praise.")
+        input()
+        print("She only streamed for a day...")
+        input()
+        print("Does everyone really want that poopularity and attention so badly?")
+        input()
+        print("ELEA: INTERNET FRENZIED")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        input()
+        exit()
+
+# FUNCTION - CHAT BAD END DAY 1: MY FANS, MY EVERYTHING.
+# + SECRET END 1: OVERDOSE OVERDOSE (OVERDOSE?)
+def chat_end_day_one():
+    input()
+    print("I love these people so much...")
+    input()
+    print("I want to talk to these people forever...")
+    input()
+    print("They are my everything...")
+    input()
+    print("My everything...")
+    input()
+    chat_again1 = int(input("How long should ELEA chat with her friends? "))
+    while chat_again1 < 0:
+        print("Please enter a positive number!")
+        chat_again1 = int(input("How long should ELEA chat with her friends? "))
+    
+    # BAD CHAT END DAY 1
+    if chat_again1 > 0 and chat_again1 <= 5:
+        input()
+        print("...")
+        input()
+        print("FRENZY OVERLOAD!")
+        input()
+        print("BAD CHAT END DAY ONE: FRENZIED ON DAY ONE")
+        input()
+        print("MY FANS, MY EVERYTHING.")
+        input()
+        print("Despite never meeting these people in person, she could not help but feel that")
+        print("these people were the only people that understood her.")    
+        input()
+        print("She only streamed for a day...")
+        input()
+        print("And all she wanted was attention. Forever.")
+        input()
+        print("ELEA: INTERNET FRENZIED")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        exit()
+    
+    # SECRET CHAT END DAY 1
+    else:
+        input()
+        print("...")
+        input()
+        print("FRENZY OVERLOAD!")
+        input()
+        print("SECRET END: OVERDOSE OVERDOSE (OVERDOSE?)")
+        input()
+        print("Even though she just started, her cute avatar and voice garnered much attention from the internet.")
+        print("Everyone from all over the world wanted to talk to her after she just debuted,")
+        print("and all she wanted to do was talk to all the new people that now admire and love her.")
+        input()
+        print("She only streamed for a day… and was already mesmerized by fame.")
+        input()
+        print("ELEA: STREAMING OVERLOAD!?")
+        exit()
+
+# FUNCTION - STREAM BAD END DAY 2: YOU CAN'T GET ENOUGH OF ME!!
+# + SECRET PATHWAY TO BAD END DAY 3: WATCH ME AGAIN! AGAIN! AGAIN! AGAIN! AGAIN! AGAIN?
+def stream_end_day_three():
+    # Defining DAY 3 first to include into DAY 2
+    print("...")
+    input()
+    print("FRENZY OVERLOAD!")
+    input()
+    print("BAD END DAY 3: I TAKE THE CENTER STAGE, I AM THE ATTENTION.")
+    input()
+    print("WATCH ME AGAIN! AGAIN! AGAIN! AGAIN! AGAIN! AGAIN! AGAIN!")
+    input()
+    print("How long has she not slept? That didn’t matter to her.")
+    input()
+    print("If someone wanted to see her, she would turn on her camera and run the stream.")
+    input()
+    print("She wanted all her fans' eyes fixed on her forever and ever.")
+    input()
+    print("ELEA: INTERNET FRENZIED")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    exit()
+
+def stream_end_day_two():
+    print("People… praise… money… I could get all of this from just streaming? This is perfect!")
+    input()
+
+    # USER ENTERS HOW MANY HOURS ELEA SHOULD STREAM AGAIN (IMPACTS STORY!)
+    stream_again_2 = int(input("How many hours should ELEA stream again?"))
+    if stream_again_2 < 0:
+        print("Please enter a positive number!")
+        stream_again_2 = int(input("How many hours should ELEA stream again?"))
+    
+    # BAD STREAM END DAY 2
+    elif stream_again_2 > 0 and stream_again_2 <= 10:
+        input()
+        print("...")
+        input()
+        print("FRENZY OVERLOAD!")
+        input()
+        print("BAD END DAY 2: I CAN'T GET ENOUGH, NEITHER CAN YOU.")
+        input()
+        print("YOU CAN'T GET ENOUGH OF ME!!")
+        input()
+        print("Whether it’s for praise or entertainment, she let her fans’ kind words drive her to insanity")
+        print("as she realized die-hard fans would watch her for as long as she kept the stream running.")
+        input()
+        print("She saw her growing community as family.")
+        input()
+        print("She wanted love and attention, and her fans gave her exactly that.")
+        input()
+        print("ELEA: INTERNET FRENZIED")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        exit()
+    
+    # SECRET PATHWAY TO BAD END DAY 3
+    else:
+        stream_end_day_three()
+
+# FUNCTION - GAMBLING ENDING DAY 2: O N L I N E  G A M B L I N G
+def gambling_end_day_two():
+
+    print("PLAY DICE! GUESS THE 2 DICE ROLLS!")
+
+    # THERE IS NO ANSWER ON PURPOSE TO MIMIC THE SCAM OF ONLINE GAMBLING
+    dice_input_one = int(input("Enter one dice guess: "))
+    dice_input_two = int(input("Enter another dice guess: "))
+    user_dice_input = dice_input_one + ", " + dice_input_two
+    input()
+    print("Your guesses were: " + user_dice_input)
+    input()
+    print("WRONG! GUESS ONE MORE TIME!")
+    input()
+
+    # ONE MORE "CHANCE"
+    dice_input_one = int(input("Enter one dice guess: "))
+    dice_input_two = int(input("Enter another dice guess: "))
+    user_dice_input = dice_input_one + ", " + dice_input_two
+    input()
+    print("WRONG! GUESS AGAIN...")
+    input()
+    print("Again.....?")
+    input()
+    print("...")
+    input()
+    print("FRENZY OVERLOAD!")
+    input()
+    print("BAD END DAY 2: I CAN'T GET ENOUGH, AND NEITHER CAN YOU.")
+    input()
+    print("O N L I N E  G A M B L I N G")
+    input()
+    print("Keep on guessing! Everyone loves the adrenaline that rushes through them in guessing games")
+    print("when it tells you you’re getting closer and closer to the answer.")
+    input()
+    print("She just didn't know when to give up, even if it was obvious she was never going to get it.")
+    input()
+    print("ELEA: INTERNET FRENZIED")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+
+# FUNCTION - CHAT BAD END DAY 2: LET'S KEEP TALKING! FOREVER! AND EVER!
+def chat_end_day_two():
+    print("More and more people have been joining the discord server? AWESOME!! MORE PEOPLE FOR ME TO CHAT WITH ALL NIGHT!")
+    input()
+    print("I can’t wait to meet my new fans~")
+    input()
+    print("...")
+    input()
+    print("FRENZY OVERLOAD!")
+    input()
+    print("BAD END DAY 2: I CAN'T GET ENOUGH, AND NEITHER CAN YOU.")
+    input()
+    print("LET'S KEEP TALKING! FOREVER! AND EVER!")
+    input()
+    print("As her popularity grew, more and more people wanted to meet this rising internet star.")
+    input()
+    print("She grew to love the attention and to her, her fan base were the only people")
+    print("who were ever going to take the time to get to know her.")
+    input()
+    print("She knew no one in real life was going to talk to her this way.")
+    input()
+    print("ELEA: INTERNET FRENZIED")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    exit()
+
+# FUNCTION - SECRET END 2: IT WAS FUN! LOVE YOU ALL!
+def sleep_secret_end1():
+    input()
+    print("...")
+    input()
+    print("This streaming thing is fun… But I do really like to sleep.")
+    input()
+    print("...Now that I think about it... Should I really keep doing this?")
+    cont_stream = input("Would you like ELEA to continue streaming? (yes/no) ")
+    while cont_stream != "yes" and cont_stream != "no":
+        print("Please enter yes or no!")
+        cont_stream = input("Would you like ELEA to continue streaming? (yes/no) ")
+    if cont_stream == "no" or cont_stream.lower == "no":
+        input()
+        print("...")
+        input()
+        print("!!!")
+        input()
+        print("SECRET END: IT WAS FUN! LOVE YOU ALL!")
+        input()
+        print("FRENZY: 0")
+        input()
+        print("She had fun while streaming, but she knew she was a little too inconsistent to do it for a living.")
+        print("She just preferred sleeping early instead of staying up all night to stream and chat with fans")
+        print("She will forever cherish the memories she made during her short time online.")
+        input()
+        print("ELEA: FINAL SIGN-OFF!")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        input()
+        exit()
+
+    # IF USER SAYS NOT TO QUIT, THE GAME CONTINUES.    
+    elif cont_stream == "yes" or cont_stream.lower == "yes":
+        input()
+        print("Nah, this is pretty fun. I'll keep doing this a little longer.")  
+        input()
+        print("Now... what should I do next?")  
+        input()
+
+# FUNCTION - CHAT BAD END DAY 3: TALK TO ME. SUPPORT ME. LOVE ME.
+def chat_end_day_three():
+    print("Ah! One of my MODs is back from vacation! Let me ask them all about it!")
+    input()
+    print("Oh! You got engaged? Everyone say congrats~")
+    input()
+    print("Awww such a cute kitty! Did you get her recently?")
+    input()
+    print("Nah don't worry, I don't need sleep! I want to chat with you guys!")
+    input()
+    print("...")
+    input()
+    print("FRENZY OVERLOAD!")
+    input()
+    input()
+    print("BAD END DAY 3: I TAKE THE CENTER STAGE, I AM THE ATTENTION.")
+    input()
+    print("TAKE TO ME. SUPPORT ME. LOVE ME.")
+    input()
+    print("The more she reached out, the more they answered.")
+    input()
+    print("She loved that there was always going to be someone who wants to talk to her, ABOUT her.")
+    input()
+    print("There was nothing better than this (right?)")
+    input()
+    print("ELEA: INTERNET FRENZIED")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+
+# FUNCTION - DAY 4 SECRET DIALOGUE IF FRENZY = 5
+def sleeping_Day4():
+    input()
+    print("...")
+    input()
+    print("It's a little crazy how I got almost 5 million people to subscribe to me...")
+    input()
+    print("I'm not even that consistent.")
+    input()
+    print("If I'm going to be honest...")
+    print("I just don't like staying up since I like the idea of sleeping for 10 hours a day...")
+    input()
+    print("Oh well... I think I thought about this some time in September...")
+    input()
+
+# FUNCTION - STREAM BAD END DAY 4: STREAMER FINALLY FRENZIED
+# + SECRET END DAY 4: I'LL ALWAYS BE HERE.
+def stream_end_day_four():
+    print("...")
+    input()
+    stream_daily4 = input("Has ELEA streamed everyday? (yes/no) ")
+    while stream_daily4 != "yes" and stream_daily4 != "no":
+        print("Please enter yes or no.")
+        stream_daily4 = input("Has ELEA streamed everyday? (yes/no) ")
+    
+    # SECRET STREAM ENDING DAY 4
+    if stream_daily4 == "yes" or stream_daily4.lower == "yes":
+        input()
+        print("...")
+        input()
+        print("FRENZY MAXED")
+        input()
+        print("How long have I been streaming? Hmm... Let's look at my OBS...")
+        input()
+        print("Oh my, I've been streaming for 3 days straight!")
+        input()
+        print("Am I doing alright? Oh of course! I love streaming all day and all night!")
+        input()
+        print("All I want is to play games and see all your live reactions!!")
+        input()
+        print("All I want...")
+        input()
+        print("...")
+        input()
+        print("IS FOR YOU. TO KEEP. YOUR EYES. ON. ME.")
+        input()
+        print("...")
+        input()
+        print("FRENZY OVERLOAD!")
+        input()
+        print("SECRET END: I'LL ALWAYS BE HERE.")
+        input()
+        print("Was she alright? The answer was no.")
+        input()
+        print("She was absolutely driven to insanity.")
+        input()
+        print("All she cared about was the camera in front of her,")
+        print("and all she cared about was the amount of live viewers watching her slowly lose in touch with reality.")
+        input()
+        print("All she truly cared about was keeping that stream running.")
+        input()
+        print("She wanted all and every second of her life to be recorded and seen by her dear fans.")
+        input()
+        print("She no longer had a care for the real world.")
+        input()
+        print("If she had all these people willing to spend so much time watching her...")
+        input()
+        print("Why should she do anything else?")
+        input()
+        print("...")
+        input()
+        print("ELEA: OVERDOSING ON INTERNET")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        exit()
+
+    # BAD STREAM END DAY 4
+
+    elif stream_daily4 == "no" or stream_daily4.lower == "no":
+        input()
+        print("...")
+        input()
+        print("WE JUST HIT 10 MIL!! LET'S HAVE A CELEBRATORY STREAM!!")
+        input()
+        stream_hours4 = int(input("How many hours should ELEA stream again?"))
+        while stream_hours4 < 0:
+            print("Please enter a positive number!")
+            stream_hours4 = int(input("How many hours hsould ELEA stream again?"))
+        else:
+            input()
+            print(str(stream_hours4) + " hours of streaming...")
+            input()
+            print("So many people genuinely come back to watch me all the time!")
+            input()
+            print("AND MORE STREAM REQUESTS ARE STILL ROLLING IN!")
+            input()
+            print("...")
+            input()
+            print("FRENZY OVERLOAD!")
+            input()
+            print("BAD END DAY 4: THROUGH MY EYES, THROUGH YOUR SCREEN.")
+            input()
+            print("STREAMER FINALLY FRENZIED")
+            input()
+            print("Turn on the stream! Let's play!")
+            print("These were the only phrases turnning through her mind all day and all night.")    
+            input()
+            print("All she wanted was the attention of her fans,")
+            print("almost as if it was the only thing keeping her alive.")
+            input()
+            print("All she cared about was the internet.")
+            input()
+            print("She was a needy streamer who just wanted all the attention in the entire world.")
+            input()
+            print("ELEA: INTERNET (FINALLY) FRENZIED")
+            input()
+            print("Thank you for playing ELEA: INTERNET FRENZY!")
+            input()
+            exit()
+
+# FUNCTION - CHAT BAD END DAY 4: KEEP LISTENING TO ME!
+# + SECRET END DAY 4: LeT's StArT a CuLt, My DeAr FaNs.
+def chat_end_day_four():
+    print("Let me check my discord server again... I feel like talking again~")
+    input()
+    print("...")
+    chat_daily4 = input("Has ELEA chatted with fans everyday? (yes/no)")
+    while chat_daily4 != "yes" and chat_daily4.lower != "yes" and chat_daily4 != "no" and chat_daily4.lower != "no":
+        print("Please enter yes or no!")
+        chat_daily4 = int(input("Has ELEA chatted with fans everyday? (yes/no)"))
+    
+    # SECRET CHAT END DAY 4
+    if chat_daily4 == "yes" or chat_daily4.lower == "yes":
+        input()
+        print("...")
+        input()
+        print("Sorry to bring all of you here on voice chat, my people.")
+        input()
+        print("I hope you are all having a blessed day.")
+        input()
+        print("Welcome to my blessed space, everyone.")
+        input()
+        print("Let's call ourselves the usual...")
+        input()
+        print("The LEAs... shall we?")
+        input()
+        print("I, as your goddess blessed from the heavens")
+        print("Shall guide you LEAs to prosperity and")
+        input()
+        print("guide you down the path of light.")
+        input()
+        print("I shall be the light in your life...")
+        input()
+        print("and you shall worship and devote yourself to MY blessed space.")
+        input()
+        print("...")
+        input()
+        print("SECRET END: LeT's StArT a CuLt, My DeAr FaNs.")
+        input()
+        print("...")
+        input()
+        print("Was this real? Was she hypnotized?")
+        input()
+        print("Was she seriously starting a cult? Her own religion?")
+        input()
+        print("No one knew for certain, but ONE thing was... almost certain.")
+        input()
+        print("The fans were not acting. They were all die-hard DEVOTED fans of ELEA.")
+        input()
+        print("Even admitting to worshipping her as a goddess that has blessed their lives.")
+        input()
+        print("...")
+        input()
+        print("She wasn't THAT impact to people's minds... was she?")
+        input()
+        print("Did people really want to talk to her... THIS much?")
+        input()
+        print("...")
+        input()
+        print("ELEA: INTERNET GODDESS")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        input()
+        exit()    
+
+    # BAD CHAT END DAY 4
+    else:
+        input()
+        print("...")
+        input()
+        print("My fans... My fans!")
+        input()
+        print("All of them are so willing to hear me talk to my heart's content...")
+        input()
+        print("This is.. truly what it feels to be a successful streamer!")
+        input()
+        print("Everyone just wants me to say whatever I want...")
+        input()
+        print("This is truly... freedom.")
+        input()
+        print("...")
+        input()
+        print("FRENZY OVERLOAD!")
+        input()
+        print("BAD END DAY 4: THROUGH MY EYES, THROUGH YOUR SCREEN.")
+        input()
+        print("KEEP LISTENING TO ME!")
+        input()
+        print("No matter was she said, and no matter what time she said it,")
+        input()
+        print("there was always someone there to respond to her.")
+        input()
+        print("Almost as if she was speaking to a million people at once under a grand spotligh,")
+        print("she found herself yearning for the response of 'her' people.")
+        input()
+        print("She saw her fans as the greatest supporters in life,")
+        input()
+        print("and she was content being under the spolight at ALL TIMES.")
+        input()
+        print("ELEA: INTERNET FRENZIED")
+        input()
+        print("Thank you for playing ELEA: INTERNET FRENZY!")
+        input()
+        exit()
+
+# FUNCTION - DAY 5 ENDING 1: SWEET DREAMS
+def dreams_end_day5():
+    print("...")
+    input()
+    print("I'm still wondering how I managed to get over 10 Mil subscribers...")
+    input()
+    print("I barely even stream, and I didn't engage with my audience all that much...")
+    input()
+    print("I even got motetized at some point...")
+    print("I thought I would have to be more consistent for that.")
+    input()
+    print("Oh well... I guess I can put this monetization money to good use.")
+    input()
+    print("I can pay for my Uni tuition in full! This is actually quite nice.")
+    input()
+    print("That's that... Now... I'm...")
+    input()
+    print("...")
+    input()
+    print("ZzzZz....")
+    input()
+    print("ENDING: SWEET DREAMS!")
+    input()
+    print("She herself was not particularily interested in all the fame and attention,")
+    print("since all she wanted to do was sleep and play games while earning some good money.")
+    input()
+    print("Nonetheless, she enjoyed her time streaming,")
+    print("even though she didn't engage with her fans outside of her stream schedule.")
+    input()
+    print("!!!")
+    input()
+    print("Congradulations for unlocking the SWEET DREAMS ENDING")
+    print("where ELEA accumlates 0 FRENZY and remains at FRENZY 5!")
+    input()
+    print("ELEA: I'M GOING BACK TO BED!")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+    
+# FUNCTION - DAY 5 ENDING 2: STAYED UP PAST MY BEDTIME ONCE!
+def bedtime_end_day5():
+    print("Ah! This whole year, I only stayed up past 12 once!!")
+    input()
+    print("When was that...")
+    input()
+    print("I don't remember, but all I know is that I was spending time with my fans!")
+    input()
+    print("I'm not that consistent, yet people still come back to see me every time!")
+    input()
+    print("Ah... such a warm feeling in my heart as I say that.")
+    input()
+    print("Streaming can be really fun, and I made so many friends!")
+    input()
+    print("ENDING: STAYED UP PAST MY BEDTIME ONCE!")
+    input()
+    print("She was not a super devoted streamer, but she does occasionally spend time")
+    print("with her fans during the day if she has time to chat.")
+    input()
+    print("She was able to have fun while still keeping a consistent sleep schedule!")
+    input()
+    print("!!!")
+    input()
+    print("Congradulations for unlocking the STAYED UP PAST MY BEDTIME ONCE ending,")
+    print("where ELEA only streamed/chatted ONCE outside of her stream schedule!")
+    input()
+    print("ELEA: TIME FOR BED! GOOD NIGHT EVERYONE!")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+
+# FUNCTION - DAY 5 ENDING 3: LAID BACK STREAMER
+def laidback_end_day5():
+    print("...")
+    input()
+    print("Hm... Should I go and stream tonight? It's been a while since I went to chat with my community...")
+    input()
+    print("Maybe I'll finally start that game that's been trending!")
+    print("That way, people can also give me tips if I need help...")
+    input()
+    print("I probably shouldn't stream until too late, I want to sleep still.")
+    input()
+    print("Anyhow, I'm glad I started streaming; It's a nice way to talk to people about the things I love!")
+    input()
+    print("ENDING: LAID BACK STREAMER")
+    input()
+    print("She was an incredibly balanced streamer!")
+    input()
+    print("She wasn't always online, but she was still consistent with streaming and chatting")
+    print("every now and then outside of her stream schedule.")
+    input()
+    print("She enjoyed chatting with fans, and hopes to continue streaming in the near future.")
+    input()
+    print("!!!")
+    input()
+    print("Congratulations for unlocking the LAID BACK STREAMER ending, where ELEA")
+    print("spends some time engaging with her fans outside of her stream schedule,")
+    print("but does so in a very well balanced manner!")
+    input()
+    print("ELEA: SEE YOU NEXT TIME, MY FREINDS!")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+
+# FUNCTION - DAY 5 ENDING 4: LET'S TALK ONE MORE TIME!
+def onemore_end_day5():
+    print("...")
+    input()
+    print("And that's it for today!")
+    input()
+    print("Your friendly neighborhood ELEA needs to go do life things!")
+    input()
+    print("Oh! It's only 8pm! Well then, why don't I see you all one more time tonight!")
+    input()
+    print("We can play this game together one more time, alright?")
+    print("Let's not waste this opportunity to chat!")
+    input()
+    print("Will I be chatting again after? Hmm... I'll see if I have more life things to do!")
+    input()
+    print("Well then, I'll be right here at 11pm again, ready to chat with you all!")
+    input()
+    print("ENDING: LET'S TALK ONE MORE TIME!")
+    input()
+    print("She was always ready to get the stream running, and she would often talk to her fans")
+    print("and plan to go live again the same day after her daily scheduled stream.")
+    input()
+    print("She was always online, ready to chat, and wouldn't hesitate to get the stream rolling whenever she had the time!")
+    input()
+    print("!!!")
+    input()
+    print("Congratulations for unlocking the LET'S TALK ONE MORE TIME ending, where ELEA has")
+    print("chatted or streamed at least ONE extra time EVERY day without becoming INTERNET FRENZIED!")
+    input()
+    print("ELEA: AND I'LL SEE YOU AGAIN LATER TODAY!")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+
+# FUNCTION - DAY 5 ENDING 5: ALL YOU WANT IS ME, AND I KNOW IT.
+def allme_end_day5():
+    print("...")
+    input()
+    print("Wow...")
+    input()
+    print("I can't believe it. Praise, money, gifts, and love.")
+    input()
+    print("I can get all of that by just streaming and chatting with people online.")
+    input()
+    print("I've gotten so much attention... and it's like people are always ready to listen")
+    print("to me talk under a huge spotlight.")
+    input()
+    print("There is truly no better feeling than this... right?")
+    input()
+    print("I have everything I want.")
+    input()
+    print("Everything I ever wanted.")
+    input()
+    print("And...")
+    input()
+    print("EVERYONE JUST WANTS ME.")
+    input()
+    print("ENDING: ALL YOU WANT IS ME, AND I KNOW IT.")
+    input()
+    print("She fed into the attention she was getting, and was blidned by her fame.")
+    input()
+    print("She loved the feeling of always being under the spotlight.")
+    input()
+    print("She would stream whenever some just ASKED, and she would go online and chat if someone wanted to.")
+    input()
+    print("She was losing touch with reality as she began moving from being chronically online to...")
+    input()
+    print("Permanently online.")
+    input()
+    print("Always chatting and streaming again after her daily streams...")
+    input()
+    print("Was this truly the best feeling in the world?")
+    input()
+    print("Congratulations for unlocking the ALL YOU WANT IS ME, AND I KNOW IT ending,")
+    print("where ELEA is incredibly close to being INTERNET FRENZIED!")
+    input()
+    print("ELEA: MISSED THE STREAM JUST NOW? I'LL GET IT UP AND RUNNING AGAIN, JUST FOR YOU!")
+    input()
+    print("Thank you for playing ELEA: INTERNET FRENZY!")
+    input()
+    exit()
+
+# FUNCTION - STREAM GAME: GUESS THE NUMBER!
+def guess_the_number():
+    input()
+    print("Watch me play a game, everyone!")
+    input()
+    print("STREAM GAME: GUESS THE NUMBER!")
+    input()
+    print("You have 5 tries to get the number!")
+    input()
+    print("The numbers range from 1 - 10!")
+    input()
+    print("Don't worry, this will not impact the story!")
+    input()
+    print("Please only enter numbers!")
+    
+    
+    # IMPORTING RANDOM --> RANDOM NUMBER FROM NUMBER LIST TO GUESS
+    import random
+    NUMLIST = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    num = random.choice(NUMLIST)
+    attempts = 1
+
+    print("Alright live chat! Help me out here!")
+
+    # WHILE TRUE TO FROCE USER ENTER AN INTEGER (AVOIDS VALUERROR)
+    while True:
+        try: 
+            guess = int(input("Let's take a guess together: "))
+            
+            # Forces user to enter a number from 1 - 10
+            while guess > 10:
+                print("The number is between 1 and 10!")
+                guess = int(input("Let's take a guess together: "))
+            while guess < 0:
+                print("The number is between 1 and 10!")    
+                guess = int(input("Let's take a guess together: "))
+                
+            # GUESSING THE NUMBER
+
+            # User has 5 attempts to guess the number
+            # Attempts only start to decrease if the input is valid
+            while guess != num and attempts <= 4:
+                print("Oh no! Let's try again!")
+                attempts += 1
+                guess = int(input("Let's take another guess! "))
+            
+            # If user guesses the number correctly:
+            if guess == num:
+                print("")
+                print("Yay! We did it! The number was " + str(num) +"!")
+                break
+            
+            # If user DOES NOT guess the number correctly after 5 tries:
+            else:
+                print("")
+                print("Awww! We didn't get it! The number was " + str(num) + "!")
+                break
+        except ValueError:
+            print("Please enter a number!")
+
+# FUNCTION - CHAT GAME: GUESS THE WORD!
+def guess_the_word():
+    input()
+    print("Let's play a game, chat!")
+    input()
+    print("CHAT GAME: GUESS THE WORD!")
+    input()
+    print("You have 5 tries to get the word!")
+    input()
+    print("After 3 tries, you can get a hint!")
+    input()
+    print("All words are related to ELEA in some way!")
+    input()
+    print("Don't worry, this will not impact the story!")
+    input()
+    print("Please enter all answers in lower case!")
+    input()
+
+    # IMPORTING RANDOM --> RANDOM WORD FROM WORDLIST TO GUESS
+    import random
+    WORDLIST = ("elea", "stream", "chat", "sleep", "attention", "gaming", "frenzy", "internet")
+    key_word = random.choice(WORDLIST)
+    attempts = 1
+    hint = key_word[0]
+    hint2 = key_word[-1]
+
+    # TELLS USER NUMBER OF LETTERS IN THE WORD
+    print("Chat! The word is " + str(len(key_word)) +" letters long!")
+    guess = input("Hmm... Let's take a guess: ")
+
+    # GUESSING THE ACTUAL WORD + HINTS
+    while guess == "" or type(guess) is int:
+        print("Please enter a word!")
+        guess = input("Hmm... Let's take a guess: ")
+    while guess.lower() != key_word.lower() and guess != "" and attempts <= 4:
+        print("Oh no! Let's try again!")
+        attempts += 1
+        if attempts == 3:
+            user_hint = input("Chat! Do we want a hint? (yes/no)")
+            while user_hint != "yes" and user_hint.lower != "yes" and user_hint != "no" and user_hint.lower != "no":
+                print("Please enter yes or no!")
+                user_hint = input("Chat! Do we want a hint? (yes/no)")
+            if user_hint == "yes" or user_hint.lower == "yes":
+                print("Chat! The hint is that the first letter of the word is " + hint)
+                print("and the last letter is " + hint2 +"!")   
+            else:
+                print("Nope! Let's keep going then!") 
+                input()
+        guess = input("Let's take another guess: ")    
+    if guess.lower() == key_word.lower():
+        print("Chat! We got it! The word was " + key_word + "!")
+        input()
+        print("...")
+    else:
+        input()
+        print("Awww! We couldn't get it this time. The word was " + key_word + "!")
+        input()
+        print("...")
+
+# FUNCTION - DAY ONE INTRO (POSSIBLE BAD ENDINGS: 2; SECRET ENDING: 1; ALL PATHS CAN LEAD TO DAY 2 IF USER PICKS THE RIGHT CHOICES!)
+def intro_day_one():
+    print("Day ONE: January 6, 2042")
+    input()
+    print("ELEA's FIRST STREAM!")
+    input()
+    print("First stream ever and I already got 10k live views… That was fun…")
+    input()
+    print("People really do like virtual-tubers nowadays, especially if their avatar is a cute girl.")
+    input()
+    print("Well, now that's done… What should I do next?")
+    input() 
+
+# FUNCTION - DAY ONE STREAM PATH 1
+def stream_path1_day_one():
+    print("That was so much fun... I think I'll stream for a bit more!")  
+    input()
+    print("FRENZY +5")
+    input()
+    print("Oh! I have a great idea!")
+    guess_the_number()  
+    input()
+    print("That was fun everyone! See you next time!!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+    input()
+
+# FUNCTION - DAY ONE STREAM PATH 2
+def stream_path2_day_one():
+    print("My views just keep going up every stream... Let's go live again!")
+    input()
+    print("FRENZY +10")
+    input()
+    print("Oh! I should do something fun with you guys again!")
+    guess_the_number()
+    input()
+    print("Ah... It's 4am and yet... so many views again! It's so addicting...")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")  
+
+# FUNCTION - DAY ONE CHAT PATH 1
+def chat_path1_day_one():
+    input()
+    print("I should chat with my new fans!")
+    input()
+    print("FRENZY +5")
+    input()
+    print("What's up everyone :3!! I have a fun idea for us!")
+    guess_the_word()
+    input()
+    print("That was so fun! You're all such nice people!")
+    input()
+    print("...")
+    input()
+    print("Well, no that's done... What should I do next?")
+
+# FUNCTION - DAY ONE CHAT PATH 2
+def chat_path2_day_one():
+    input()
+    print("Let me not waste this oppurtunity since they're still awake...")
+    input()
+    print("FRENZY +10")
+    input()
+    print("OH! I can play a game with them again!")
+    guess_the_word()
+    input()
+    print("They're such lovely and amazing people... If only I could talk to them all the time...")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do now?")
+
+# FUNCTION - DAY TWO INTRO (POSSIBLE BAD ENDS: 3, CAN GET DAY 3 STREAM END; ALL PATHS LEAD TO DAY 3 IF USER PICKS THE RIGHT CHOICES!)
+def intro_day_two():
+    print("DAY TWO: APRIL 6, 2042")
+    input()
+    print("ELEA HAS BEEN 3 MONTHS INTO STREAMING!")
+    input()
+    print("Ah... The last 3 months have been nice.")
+    input()
+    print("Some streaming here and there, and I've also gotten monitized recently!")
+    input()
+    print("Welp, time to stream again!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY TWO STREAM PATH 1
+def stream_path1_day_two():
+    print("Huh? Does someone what me to stream again?")
+    input()
+    print("Really?! Then let's get the stream rolling!")
+    input()
+    print("FRENZY +5")
+    input()
+    print("Why don't we do something together today!")
+    guess_the_number()
+    input()
+    print("That was so fun!!! I feel so safe in my community!")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY TWO STREAM PATH 2
+def stream_path2_day_two():
+    print("People are waiting for my next stream already?")
+    input()
+    print("Well, here I come!")
+    input()
+    print("FRENZY +10")
+    input()
+    print("Hey chat! Are you ready for what's next?!")
+    guess_the_number()
+    input()
+    print("Ah!! This is so much fun, everyone!")
+    input("...")
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY TWO CHAT PATH 1
+def chat_path1_day_two():
+    print("I should chat with my new channel members...")
+    input()
+    print("FRENZY +5")
+    input()
+    print("I have a fun idea!")
+    input()
+    print("Join VC everyone :D!!")
+    guess_the_word()
+    input()
+    print("That was great! These people are so fun to play games with!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY TWO CHAT PATH 2
+def chat_path2_day_two():
+    print("Ah! Someone's online!")
+    input()
+    print("Let me chat with them~")
+    input()
+    print("Yo!")
+    input()
+    print("OH :O !! Let's play a game!!!!")
+    guess_the_word()
+    input()
+    print("That was so fun...")
+    input()
+    print("I didn't think streaming would make me find such")
+    print("a nice group of online friends!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY THREE INTRO (POSSIBLE BAD ENDS: 2; SECRET END: 1; ALL PATHS CAN LEAD TO DAY 4 IF USER PICKS THE RIGHT CHOICES!)
+def intro_day_three():
+    print("DAY THREE: SEPTEMBER 6, 2042")
+    input()
+    print("ELEA has been streaming for almost 3 quarters of the year now!")
+    input()
+    print("Ah!! It's almost time to stream! Time to get my camera ready~")
+    input()
+    print("3... 2... 1... STREAM TIME!")
+    input()
+    print("Hey everyone! Did you see what was on the stream schedule for today~!")
+    input()
+    print("...")
+    input()
+    print("That was fun everyone!! Thanks for playing with me today~")
+    input()
+    print("Well, now that's done... What should I do now?")
+
+# FUNCTION - DAY THREE STREAM PATH 1
+def stream_path1_day_three():
+    print("I should stream again!")
+    print("There are so many people who want to see my again!")
+    input()
+    print("FRENZY +5")
+    input()
+    print("Time for everyone's favourite part of the stream!")
+    guess_the_number()
+    input()
+    print("Let's play again together next stream~")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY THREE STREAM PATH 2
+def stream_path2_day_three():
+    print("Someone subscribed to my patreon!")
+    input()
+    print("They requested a late-night stream?")
+    print("Well, HERE I GO!")
+    input()
+    print("FRENZY +10")
+    input()
+    print("What's up LEAs!! LATE NIGHT STREAM TODAY~")
+    guess_the_number()
+    input()
+    print("Alrighty!! That was so fun~")
+    input()
+    print("Let's play another time, my dear LEAs!!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do now")
+
+# FUNCTION - DAY THREE CHAT PATH 1
+def chat_path1_day_three():
+    print("Ah!")
+    input()
+    print("I should talk to my mods and my channel members!")
+    input()
+    print("FRENZY +5")
+    input()
+    print("Oh? You wanna play a game together? Sure XD!!")
+    print("Let me announce our game to the server~")
+    guess_the_word()
+    input()
+    print("I wish that game lasted longer!")
+    input()
+    print("I should invite more members to play with use next time!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY THREE CHAT PATH 2
+def chat_path2_day_three():
+    print("Let me not waste this opportunity since they're still awake!")
+    input()
+    print("FRENZY +10")
+    input()
+    print("Yo! Whoever's still awake, wanna play a game :D?")
+    input()
+    print("Lemme hop on VC :3")
+    guess_the_word()
+    input()
+    print("I wish I could meet all of these people...")
+    input()
+    print("It would be the best meetup in history!!")
+    print("We could play games, chat, party...")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do now?")
+
+# FUNCTION - DAY FOUR INTRO (POSSIBLE BAD ENDS: 2; SECRET ENDS: 2; ALL PATHS CAN LEAD TO DAY 5 IF USER PICKS THE RIGHT CHOICES!)
+def intro_day_four():
+    print("DAY FOUR: DECEMBER 6, 2042")
+    input()
+    print("ELEA has been streaming for almost a year now!!")
+    input()
+    print("Wow... I've made it so far!!")
+    input()
+    print("Almost 5 million people watch me do silly things...")
+    input()
+    print("That's so crazy!! But I loved every second of being here!")
+    input()
+    print("Let's have some more fun today~")
+    input()
+    print("...")
+    input()
+    print("Ah!!! Super duper fun!! Let's have even more fun next time, LEAs!!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTION - DAY FOUR STREAM PATH 1
+def stream_path1_day_four():
+    print("500k people want me to stream right now?")
+    input()
+    print("HELL YEAH!")
+    input()
+    print("FRENZY +5")
+    input()
+    print("Oh! A game request! Let's do it, LEAs!!")
+    guess_the_number()
+    input()
+    print("And that's it for now, LEAs!!!")
+    input()
+    print("Let me know in the comments or in my server if there are any")
+    print("other games you want me to play on stream for you all~")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done, What should I do next?")
+
+# FUNCTION - DAY FOUR STREAM PATH 2
+def stream_path2_day_four():
+    print("WE'RE SO CLOSE TO 10 MILLION!!!")
+    input()
+    print("AH! LET'S DO A SUBATHON!!")
+    input()
+    print("Let's see all the requests you guys had for me from last stream...")
+    input()
+    print("AH! I like this one!")
+    guess_the_number()
+    input()
+    print("AND THAT CONCLUDES THE SUBATHON!!! WE REACHED 10 MILLION, EVERYONE!!!")
+    input()
+    print("THANK YOU FOR ALL YOUR LOVE AND SUPPORT LOVELY LEAS!!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTOIN - DAY FOUR CHAT PATH 1
+def chat_path1_day_four():
+    print("Oh! My server is SO ACTIVE RIGHT NOW!!")
+    input()
+    print("FRENZY +5")
+    input()
+    print("Hm? A game request? Sure!!")
+    input()
+    print("Oh! I LOVE THIS GAME XD !!")
+    guess_the_word()
+    input()
+    print("Hey chat!! LET'S PLAY LIKE THIS MORE OFTEN, OK XD!!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do next?")
+
+# FUNCTOIN - DAY FOUR CHAT PATH 2
+def chat_path2_day_four():
+    print("VC game night request from super chat? LET'S GOO!!!")
+    input()
+    print("FRENZY +10")
+    input()
+    print("HEY EVERYONE~ I_love_ELEA_11 requested a game night on super chat!!")
+    input()
+    print("Join us now for (super exclusive) ELEA moments XD")
+    guess_the_word()
+    input()
+    print("You're all so wonderful :3 !!")
+    input()
+    print("These people are so nice...")
+    input()
+    print("Even though I've never met them in person,")
+    print("I feel like I've known them for years!")
+    input()
+    print("...")
+    input()
+    print("Well, now that's done... What should I do now?")
+
+# FUNCTION DAY 5 INTRO (FINAL ENDINGS: 5)
+def intro_day_five():
+    print("DAY 5: JANUARY 6, 2023")
+    input()
+    print("Today would make ELEA's channel 1 year old!")
+    input()
+    print("Congratulations, you have successfully run ELEA's channel for a year")
+    print("without having her go INTERNET FRENZY!")
+    input()
+    print("Now... Let's see what type of streamer you made ELEA, shall we?")
+
+'''
+GAME LOOP!
+
+DAYS ARE SEPERATED INTO DIFFERENT WHILE STATEMENTS!
+ALL DIALOGUE IS WRITTEN IN FUNCTIONS!
+'''
+# INTRO TEXT ABOUT THE GAME
+elea_intro()
+
+# DAY ONE STARTS HERE:
+intro_day_one()
+
+# FRENZY! GAME MECHANIC. ACCUMALTES BASED ON USER CHOICES.
+frenzy = 5
+
+# DAY ONE CHOICE 1 OPTIONS AFTER MAIN STREAM: 
+print("1. STREAM AGAIN!")
+print("2. CHAT WITH FANS!")
+print("3. SLEEP!")
+print("Please enter the corresponding number of your choice!")
+
+# WHILE TRUE TO TELL USER TO ENTER A NUMBER WHEN VALUERROR OCCURS TO INT(INPUT)
+while True:
+    try:
+        # Variable for main choice user input
+        mainchoice_day1 = int(input("What should ELEA do next? (1, 2, 3): "))
+        while mainchoice_day1 != 1 and mainchoice_day1 != 2 and mainchoice_day1 !=3:
+            print("Please enter 1, 2, or 3!")
+            mainchoice_day1 = int(input("What should ELEA do next?: "))
+
+        # CHOICE 1: STREAM AGAIN!    
+        if mainchoice_day1 == 1:
+            frenzy = frenzy + 5
+            stream_path1_day_one()
+            print("FRENZY: " + str(frenzy))
+            input()
+
+            # DAY ONE STREAM CHOICE OPTIONS:
+            print("Current time: 12am")
+            input()
+            print("1. STREAM AGAIN!")
+            print("2. SLEEP!")
+
+            while True:
+                try:   
+                    # Variable for secondary choice input 
+                    stream_choice_day1 = int(input("What should ELEA do next? "))
+                    while stream_choice_day1 != 1 and stream_choice_day1 != 2:
+                        print("Please enter 1 or 2!")
+                        stream_choice_day1 = int(input("What should ELEA do next? "))
+                    if stream_choice_day1 == 1:
+                        frenzy = frenzy + 10
+                        stream_path2_day_one()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                        
+                        # DAY ONE STREAM CHOICE 2 OPTIONS:
+                        print("Current time: 4am")
+                        input()
+                        print("1. STREAM AGAIN! AGAIN! AGAIN! AGAIN! AGAIN!")
+                        print("2. Time to sleep...")
+
+                        while True:
+                            try: 
+                                # Variable for third choice input
+                                stream_choice2_day1 = int(input("What should ELEA do now? "))
+                                while stream_choice2_day1 != 1 and stream_choice2_day1 != 2:
+                                    print("Please enter 1 or 2!")
+                                    stream_choice2_day1 = int(input("What should ELEA do now? "))
+                                
+                                # DAY ONE STREAM BAD END
+                                if stream_choice2_day1 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    stream_end_day_one()   
+                                else:
+                                    sleep_option()  
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                break        
+                            except ValueError:
+                                print("Please enter a number!")                              
+                        break
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break   
+                except ValueError:
+                    print("Please enter a number!")   
+            break          
+        
+        # CHOICE 2: CHAT!
+        elif mainchoice_day1 == 2:
+            frenzy = frenzy + 5
+            chat_path1_day_one()
+
+            # DAY ONE CHAT CHOICE OPTIONS:
+            print("1: Chat more!")
+            print("2: Sleep!")
+
+            while True:
+                try:
+                    # Variable for secondary choice input 
+                    chat_choice_day1 = int(input("What should ELEA do next? "))
+                    while chat_choice_day1 != 1 and chat_choice_day1 != 2:
+                        print("Please enter 1 or 2!")
+                        chat_choice_day1 = int(input("What should ELEA do next? "))
+                    if chat_choice_day1 == 1:
+                        frenzy = frenzy + 10
+                        chat_path2_day_one()
+                        input()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+
+                        # DAY ONE CHAT 2 CHOICE OPTIONS:
+                        print("1: CHAT CHAT CHAT CHAT!")
+                        print("2: Time to sleep...")
+
+                        while True:
+                            try:
+                                # Variable for third choice input
+                                chat_choice2_day1 = int(input("What should ELEA do now? "))
+                                while chat_choice2_day1 != 1 and chat_choice2_day1 != 2:
+                                    print("Please enter 1 or 2!")
+                                    chat_choice2_day1 = int(input("What should ELEA do now? "))
+                                
+                                # DAY ONE CHAT BAD END
+                                if chat_choice2_day1 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    chat_end_day_one()
+                                else:
+                                    sleep_option()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                break       
+                            except ValueError:
+                                print("Please enter a number!")
+                        break        
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break    
+                except ValueError:
+                    print("Please enter a number!")  
+            break         
+        else:
+            sleep_option()
+            print("FRENZY: " + str(frenzy))
+            input()
+        break            
+    except ValueError:
+        print("Please enter a number!")
+
+# DAY TWO STARTS HERE:
+
+intro_day_two()
+
+# DAY TWO CHOICE 1 OPTIONS AFTER MAIN STREAM:
+print("1. STREAM AGAIN!")
+print("2. CHAT ON DISCORD!")
+print("3. SLEEP!")
+
+while True:
+    try:
+        # Variable for main choice user input
+        mainchoice_day2 = int(input("What should ELEA do next?  "))
+        while mainchoice_day2 != 1 and mainchoice_day2 != 2 and mainchoice_day2 !=3:
+            print("Please enter 1, 2, or 3!")
+            mainchoice_day2 = int(input("What should ELEA do next?: "))
+
+        # CHOICE 1: STREAM AGAIN!    
+        if mainchoice_day2 == 1:
+            frenzy = frenzy + 5
+            stream_path1_day_two()
+            print("FRENZY: " + str(frenzy))
+            input()
+
+            # DAY TWO STREAM CHOICE OPTIONS:
+            print("Current time: 12am")
+            input()
+            print("1. STREAM AGAIN!")
+            print("2. SLEEP TIME!")
+
+            while True:
+                try:    
+                    # Variable for secondary choice input 
+                    stream_choice_day2 = int(input("What should ELEA do next? "))
+                    while stream_choice_day2 != 1 and stream_choice_day2 != 2:
+                        print("Please enter 1 or 2!")
+                        stream_choice_day2 = int(input("What should ELEA do next? "))
+                    if stream_choice_day2 == 1:
+                        frenzy = frenzy + 10
+                        stream_path2_day_two()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+
+                        # DAY TWO STREAM CHOICE 2 OPTIONS:
+                        print("Current time: 4am")
+                        input()
+                        print("1. STREAM AGAIN! AGAIN! AGAIN! AGAIN! AGAIN!")
+                        print("2. Time to sleep...")
+                        print("3. GAMBLE! LET'S PLAY DICE!")
+
+                        while True:
+                            try: 
+                                # Variable for third choice input
+                                stream_choice2_day2 = int(input("What should ELEA do now? "))
+                                while stream_choice2_day2 != 1 and stream_choice2_day2 != 2 and stream_choice2_day2 != 3:
+                                    print("Please enter 1, 2, or 3!")
+                                    stream_choice2_day2 = int(input("What should ELEA do now? "))
+                                
+                                # DAY TWO STREAM BAD END
+                                if stream_choice2_day2 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    stream_end_day_two()
+                                elif stream_choice_day2 == 3:
+                                    frenzy = frenzy + 30 
+                                    print("FRENZY +30!!!") 
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    gambling_end_day_two()
+                                else:
+                                    sleep_option()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()    
+                                break
+                            except ValueError:
+                                print("Please enter a number!")   
+                        break
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))    
+                        input()
+                    break
+                except ValueError:
+                    print("Please enter a number!")
+            break  
+
+        # CHOICE 2: CHAT ON DISCORD!  
+        elif mainchoice_day2 == 2:
+            frenzy = frenzy + 5
+            chat_path1_day_two()
+            print("FRENZY: " + str(frenzy))
+            input()
+            
+            # DAY TWO CHAT CHOICE OPTIONS:
+            print("1: Chat more!")
+            print("2: Sleep!")
+
+            while True:
+                try:
+                    # Variable for secondary choice input 
+                    chat_choice_day2 = int(input("What should ELEA do next? "))
+                    while chat_choice_day2 != 1 and chat_choice_day2 != 2:
+                        print("Please enter 1 or 2!")
+                        chat_choice_day2 = int(input("What should ELEA do next? "))
+                    if chat_choice_day2 == 1:
+                        frenzy = frenzy + 10
+                        chat_path2_day_two()
+                        input()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+
+                        # DAY TWO CHAT 2 CHOICE OPTIONS:
+                        print("1: CHAT CHAT CHAT CHAT!")
+                        print("2: Time to sleep...")
+
+                        while True:
+                            try:
+                                # Variable for third choice input
+                                chat_choice2_day2 = int(input("What should ELEA do now? "))
+                                while chat_choice2_day2 != 1 and chat_choice2_day2 != 2:
+                                    print("Please enter 1 or 2!")
+                                    chat_choice2_day2 = int(input("What should ELEA do now? "))
+                                
+                                # DAY TWO CHAT BAD END
+                                if chat_choice2_day2 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    chat_end_day_two()
+                                else:
+                                    sleep_option()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                break        
+                            except ValueError:
+                                print("Please enter a number!")
+                        break
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break    
+                except ValueError:
+                    print("Please enter a number!")   
+            break
+        else:
+            sleep_option()
+            print("FRENZY: " + str(frenzy))
+            input()
+        break            
+    except ValueError:
+        print("Please enter a number!")
+
+'''
+So far, if you do not choose a bad end, 
+the max amount of FRENZY the user can have is 35.
+(Bad ends automatically make your Frenzy >= 50)
+
+FRENZY STARTS TO MATTER ON DAY 3!
+USER CAN START GETTING BAD ENDS FROM ACCUMULATED FRENZY
+'''
+# DAY 3 STARTS HERE:
+intro_day_three()
+
+# SECRET SLEEP END IF USER HAS BEEN SLEEPING FOR ALL NIGHTS SO FAR
+if frenzy == 5:
+    print("FRENZY: " + str(frenzy))
+    sleep_secret_end1()
+
+# DAY THREE CHOICE 1 OPTIONS AFTERMAIN STREAM:
+print("1. STREAM! AGAIN!")
+print("2. CHAT WITH CHANNEL MEMBERS!")
+print("3. SLEEP!")
+
+while True:
+    try:
+        # Variable for main choice user input
+        mainchoice_day3 = int(input("What should ELEA do next? (1, 2, 3): "))
+        while mainchoice_day3 != 1 and mainchoice_day3 != 2 and mainchoice_day3 !=3:
+            print("Please enter 1, 2, or 3!")
+            mainchoice_day3 = int(input("What should ELEA do next?: "))
+
+        # CHOICE 1: STREAM AGAIN!    
+        if mainchoice_day3 == 1:
+            frenzy = frenzy + 5
+
+            # WARNING FOR IF USER'S FRENZY REACHES 40
+            # GAME OVER IF USER'S FRENZY REACHED >= 50
+            if frenzy >= 40 and frenzy < 50:
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                print("WARNING! FRENZY >= 40!!")
+                input()
+            elif frenzy >= 50:
+                print("!!!")
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                stream_end_day_three()
+            stream_path1_day_three()
+            print("FRENZY: " + str(frenzy))
+            input()
+
+            # DAY THREE STREAM CHOICE OPTIONS:
+            print("Current time: 12am")
+            input()
+            print("1. STREAM AGAIN!")
+            print("2. SLEEP!")
+
+            while True:
+                try:    
+                    # Variable for secondary choice input 
+                    stream_choice_day3 = int(input("What should ELEA do next? "))
+                    while stream_choice_day3 != 1 and stream_choice_day3 != 2:
+                        print("Please enter 1 or 2!")
+                        stream_choice_day3 = int(input("What should ELEA do next? "))
+                    if stream_choice_day3 == 1:
+                        frenzy = frenzy + 10
+                        if frenzy >= 40 and frenzy < 50:
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            print("WARNING! FRENZY >= 40!!")
+                            input()
+                        elif frenzy >= 50:
+                            print("!!!")
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            stream_end_day_three()
+                        stream_path2_day_three()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                        
+
+                        # DAY THREE STREAM CHOICE 2 OPTIONS:
+                        print("Current time: 4am")
+                        input()
+                        print("1. STREAM AGAIN! AGAIN! AGAIN! AGAIN! AGAIN!")
+                        print("2. Time to sleep...")
+
+                        while True:
+                            try: 
+                                # Variable for third choice input
+                                stream_choice2_day3 = int(input("What should ELEA do now? "))
+                                while stream_choice2_day3 != 1 and stream_choice2_day3 != 2:
+                                    print("Please enter 1 or 2!")
+                                    stream_choice2_day3 = int(input("What should ELEA do now? "))
+                                
+                                # DAY THREE STREAM BAD END
+                                if stream_choice2_day3 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    stream_end_day_three()   
+                                else:
+                                    sleep_option() 
+                                    print("FRENZY: " + str(frenzy)) 
+                                    input()
+                                break        
+                            except ValueError:
+                                print("Please enter a number!")                              
+                        break
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break   
+                except ValueError:
+                    print("Please enter a number!")   
+            break          
+        
+        # CHOICE 2: CHAT!
+        elif mainchoice_day3 == 2:
+            frenzy = frenzy + 5
+            if frenzy >= 40 and frenzy < 50:
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                print("WARNING! FRENZY >= 40!!")
+                input()
+            elif frenzy >= 50:
+                print("!!!")
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                chat_end_day_three()
+            chat_path1_day_three()
+            print("FRENZY: " + str(frenzy))
+            input()
+            
+
+            # DAY THREE CHAT CHOICE OPTIONS:
+            print("1: Chat more!")
+            print("2: Sleep!")
+
+            while True:
+                try:
+                    # Variable for secondary choice input 
+                    chat_choice_day3 = int(input("What should ELEA do next? "))
+                    while chat_choice_day3 != 1 and chat_choice_day3 != 2:
+                        print("Please enter 1 or 2!")
+                        chat_choice_day3 = int(input("What should ELEA do next? "))
+                    if chat_choice_day3 == 1:
+                        frenzy = frenzy + 10
+                        if frenzy >= 40 and frenzy < 50:
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            print("WARNING! FRENZY >= 40!!")
+                            input()
+                        elif frenzy >= 50:
+                            print("!!!")
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            chat_end_day_three()
+                        chat_path2_day_three()
+                        input()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+
+                        # DAY THREE CHAT 2 CHOICE OPTIONS:
+                        print("1: CHAT CHAT CHAT CHAT!")
+                        print("2: Time to sleep...")
+
+                        while True:
+                            try:
+                                # Variable for third choice input
+                                chat_choice2_day3 = int(input("What should ELEA do now? "))
+                                while chat_choice2_day3 != 1 and chat_choice2_day3 != 2:
+                                    print("Please enter 1 or 2!")
+                                    chat_choice2_day3 = int(input("What should ELEA do now? "))
+                                
+                                # DAY THREE CHAT BAD END
+                                if chat_choice2_day3 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    chat_end_day_three()
+                                else:
+                                    sleep_option()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                break       
+                            except ValueError:
+                                print("Please enter a number!")
+                        break        
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break    
+                except ValueError:
+                    print("Please enter a number!")  
+            break         
+        else:
+            sleep_option()
+            print("FRENZY: " + str(frenzy))
+            input()
+        break            
+    except ValueError:
+        print("Please enter a number!")                
+
+# DAY 4 STARTS HERE:
+intro_day_four()
+
+# SECRET DAY 4 DIALOGUE IF USER HAS BEEN SLEEPING ALL NIGHTS
+if frenzy == 5:
+    print("FRENZY: " + str(frenzy))
+    input()
+    sleeping_Day4()
+
+print("1. STREAM! AGAIN!")
+print("2. CHAT WITH CHANNEL MEMBERS!")
+print("3. SLEEP!")
+
+while True:
+    try:
+        # Variable for main choice user input 
+        mainchoice_day4 = int(input("What should ELEA do next? (1, 2, 3): "))
+        while mainchoice_day4 != 1 and mainchoice_day4 != 2 and mainchoice_day4 !=3:
+            print("Please enter 1, 2, or 3!")
+            mainchoice_day4 = int(input("What should ELEA do next?: "))
+
+        # CHOICE 1: STREAM AGAIN!    
+        if mainchoice_day4 == 1:
+            frenzy = frenzy + 5
+
+            # WARNING FOR IF USER'S FRENZY REACHES 40
+            # GAME OVER IF USER'S FRENZY REACHED >= 50
+            if frenzy >= 40 and frenzy < 50:
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                print("WARNING! FRENZY >= 40!!")
+                input()
+            elif frenzy >= 50:
+                print("!!!")
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                stream_end_day_four()
+            stream_path1_day_four()
+            print("FRENZY: " + str(frenzy))
+            input()
+
+            # DAY FOUR STREAM CHOICE OPTIONS:
+            print("Current time: 12am")
+            input()
+            print("1. STREAM AGAIN!")
+            print("2. SLEEP!")
+
+            while True:
+                try:    
+                    # Variable for secondary choice input 
+                    stream_choice_day4 = int(input("What should ELEA do next? "))
+                    while stream_choice_day4 != 1 and stream_choice_day4 != 2:
+                        print("Please enter 1 or 2!")
+                        stream_choice_day4 = int(input("What should ELEA do next? "))
+                    if stream_choice_day4 == 1:
+                        frenzy = frenzy + 10
+                        if frenzy >= 40 and frenzy < 50:
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            print("WARNING! FRENZY >= 40!!")
+                            input()
+                        elif frenzy >= 50:
+                            print("!!!")
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            stream_end_day_four()
+                        stream_path2_day_four()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                        
+
+                        # DAY FOUR STREAM CHOICE 2 OPTIONS:
+                        print("Current time: 4am")
+                        input()
+                        print("1. STREAM AGAIN! AGAIN! AGAIN! AGAIN! AGAIN!")
+                        print("2. Time to sleep...")
+
+                        while True:
+                            try: 
+                                # Variable for third choice input
+                                stream_choice2_day4 = int(input("What should ELEA do now? "))
+                                while stream_choice2_day4 != 1 and stream_choice2_day4 != 2:
+                                    print("Please enter 1 or 2!")
+                                    stream_choice2_day4 = int(input("What should ELEA do now? "))
+                                
+                                # DAY FOUR STREAM BAD END
+                                if stream_choice2_day4 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    stream_end_day_four()   
+                                else:
+                                    sleep_option() 
+                                    print("FRENZY: " + str(frenzy)) 
+                                    input()
+                                break        
+                            except ValueError:
+                                print("Please enter a number!")                              
+                        break
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break   
+                except ValueError:
+                    print("Please enter a number!")   
+            break          
+        
+        # CHOICE 2: CHAT!
+        elif mainchoice_day4 == 2:
+            frenzy = frenzy + 5
+            if frenzy >= 40 and frenzy < 50:
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                print("WARNING! FRENZY >= 40!!")
+                input()
+            elif frenzy >= 50:
+                print("!!!")
+                input()
+                print("FRENZY: " + str(frenzy))
+                input()
+                chat_end_day_four()
+            chat_path1_day_four()
+            print("FRENZY: " + str(frenzy))
+            input()
+            
+
+            # DAY FOUR CHAT CHOICE OPTIONS:
+            print("1: Chat more!")
+            print("2: Sleep!")
+
+            while True:
+                try:
+                    # Variable for secondary choice input 
+                    chat_choice_day4 = int(input("What should ELEA do next? "))
+                    while chat_choice_day4 != 1 and chat_choice_day4 != 2:
+                        print("Please enter 1 or 2!")
+                        chat_choice_day4 = int(input("What should ELEA do next? "))
+                    if chat_choice_day4 == 1:
+                        frenzy = frenzy + 10
+                        if frenzy >= 40 and frenzy < 50:
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            print("WARNING! FRENZY >= 40!!")
+                            input()
+                        elif frenzy >= 50:
+                            print("!!!")
+                            input()
+                            print("FRENZY: " + str(frenzy))
+                            input()
+                            chat_end_day_four()
+                        chat_path2_day_four()
+                        input()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+
+                        # DAY FOUR CHAT 2 CHOICE OPTIONS:
+                        print("1: CHAT CHAT CHAT CHAT!")
+                        print("2: Time to sleep...")
+
+                        while True:
+                            try:
+                                # Variable for third choice input
+                                chat_choice2_day4 = int(input("What should ELEA do now? "))
+                                while chat_choice2_day4 != 1 and chat_choice2_day4 != 2:
+                                    print("Please enter 1 or 2!")
+                                    chat_choice2_day4 = int(input("What should ELEA do now? "))
+                                
+                                # DAY FOUR CHAT BAD END
+                                if chat_choice2_day4 == 1:
+                                    frenzy = frenzy + 30
+                                    print("FRENZY +30!!!")
+                                    input()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                    chat_end_day_four()
+                                else:
+                                    sleep_option()
+                                    print("FRENZY: " + str(frenzy))
+                                    input()
+                                break       
+                            except ValueError:
+                                print("Please enter a number!")
+                        break        
+                    else:
+                        sleep_option()
+                        print("FRENZY: " + str(frenzy))
+                        input()
+                    break    
+                except ValueError:
+                    print("Please enter a number!")  
+            break         
+        else:
+            sleep_option()
+            print("FRENZY: " + str(frenzy))
+            input()
+        break            
+    except ValueError:
+        print("Please enter a number!")       
+
+# DAY 5 STARTS HERE:
+intro_day_five()
+input()
+print("FRENZY: " + str(frenzy))
+input()
+
+# BASED ON FINAL FRENZY LEVEL, USER CAN GET DIFFERENT ENDINGS!
+if frenzy == 5:
+    dreams_end_day5()
+elif frenzy > 5 and frenzy <= 10:
+    bedtime_end_day5()
+elif frenzy > 10 and frenzy <= 25:
+    laidback_end_day5()
+elif frenzy > 25 and frenzy <=40:
+    onemore_end_day5()
+else:
+    allme_end_day5()                
