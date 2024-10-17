@@ -1,0 +1,229 @@
+'''
+Natalie Tsui
+ICS3U - Nim Game
+Start Date: October 11, 2024
+Due Date: October 23, 2024
+
+'''
+
+# Importing the time and random module
+# Random: Randomizes the amount of counters in each pile each game
+# Time: Text effects
+import time
+import random
+
+# Function: Displaying current counters in each pile as ASTERISKS
+def counter_display(a, b, c, d):
+    # Finds the pile with the highest number of counters using "max" to determine the height of the "tallest" pile
+    highest_num = max(a, b, c, d)    
+    # Uses the highest number of counters to display asterisks starting from the top (tallest pile) and working down to the bottom
+    for i in range(highest_num, 0, -1):
+        row = ""
+        if a >= i:
+            row+="* "
+        else:
+            row += "  "     
+        if b >= i:
+            row+="* "
+        else:
+            row += "  "    
+        if c >= i:
+            row+="* "
+        else:
+            row += "  "       
+        if d >= i:
+            row+="* "
+        else:
+            row += "  "      
+        print(row)         
+    print("A B C D")   
+    # Printing to show the user the exact number (asterisks may be difficult to read!)
+    print(str(a), str(b), str(c), str(d)) 
+
+def input_checker_pile(pile):
+    # If the user enters a number for the "pile" paremeter, it will ask the user to enter a ltter
+    if type(pile) == int:
+        print("Please enter a letter!")
+    # If the user enters a string but is not any of the listed piles, user will be asked to pick from the 4 piles    
+    elif type(pile) == str and pile.lower != "a" and pile.lower != "b" and pile.lower != "c" and pile.lower != "d":
+        print("Please pick a, b, c, or d!")        
+
+def low_counters(pile, counter):
+    # Tells the user they are trying to take more counters out of a pile than the pile currently has
+    print("Hey, pile " + str(pile) + " doesn't have " + str(counter) + " counters!")
+    print("Pick another pile or pick a different number of counters!!")    
+
+def final_counter(a, b, c, d, current_player):
+    # If there is only 1 counter left, the current player loses
+    if a + b + c + d == 1:
+        print("There is only one counter left, " + current_player + " loses!")      
+
+def pile_name(pile):
+    # Makes pile actually equal to the chosen pile value; used to check if the user is trying to take more counters out of the pile than it currently has
+    if pile == "a":
+        pile = a
+        return pile
+    elif pile == "b":
+        pile = b
+        return pile 
+    elif pile == "c":
+        pile = c
+        return pile
+    elif pile == "d":
+        pile = d  
+        return pile
+
+def reverse_pile_name(pile):
+    # Reverses the pile assigning; in case 2 piles had the same amount, python would not subtract from the wrong pile (check game loop)
+    if pile == a:
+        pile ="a"
+        return pile
+    elif pile == b:
+        pile = "b"
+        return pile    
+    elif pile == c:
+        pile = "c"
+        return pile
+    elif pile == d:
+        pile = "d"
+        return pile            
+
+def player_change(current_player):
+    if current_player == player1:
+        current_player = player2
+        return current_player
+    else:
+        current_player = player1
+        return current_player        
+ 
+
+# Game;
+while True: 
+    counter_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    a = random.choice(counter_num)
+    b = random.choice(counter_num)
+    c = random.choice(counter_num)
+    d = random.choice(counter_num)
+
+    print("Welcome to Natalie's Nim game!")
+    input()
+    print("In this game, you and another player are to take counters out of 4 piles.")
+    input()
+    print("You are allowed to pick up all counters in a pile at once!")
+    input()
+    print("Whoever picks up the last tile loses!")
+    print("If there is only one tile left, the other player loses!")
+    input()
+    print("If all counters are picked up and the final pile had more than 1 counter left, the player that last picked up wins!")
+    input()
+    print("Please enter the pile letter in lowercase!")
+    input()
+    print("Have fun!")
+    input()
+    print("Starting game... (DO NOT PRESS ANYTHING!)")
+    time.sleep(1)
+    print("Nat Nim Game: START!")
+    input()
+    player1 = input("Player 1, enter your name: ")
+    player2 = input("Player 2, enter your name: ")
+    current_player = player1
+
+    # Turn 1 --> Player 1 picks a pile and takes some tiles out
+    counter_display(a, b, c, d)
+    input()
+    print(current_player + " pick a pile!")
+    pile = input("Enter a, b, c, or d: ").lower()
+    while pile != "a" and pile != "b" and pile != "c" and pile != "d":
+        input_checker_pile(pile)
+        pile = input("Enter a, b, c, or d: ").lower()   
+    while True:
+        try:
+            counter = int(input("How many counters would you like to take out? "))
+            break
+        except ValueError:
+            print("Please enter a number!")
+    pile = pile_name(pile)  
+    while counter > pile:
+        low_counters(pile, counter)
+        counter = int(input("How many counters would you like to take out? "))
+
+    # Updates the piles by subtracting the original amount of counters in a pile by the amount the user picks up
+    pile = reverse_pile_name(pile)
+    if pile == "a":
+        a -= counter
+    elif pile == "b":
+        b -= counter
+    elif pile == "c":
+        c -= counter    
+    elif pile == "d":
+        d -= counter  
+
+    # Switches the players for their respective turn
+    current_player = player_change(current_player)     
+
+    # Game Loop to allow players to now change piles once current pile is empty
+    while a + b + c + d > 1:    
+        counter_display(a, b, c, d)
+        print(current_player +"'s turn!")
+        pile = pile_name(pile)
+        # If there are no more counters in the pile, the user is forced to choose another pile
+        while pile == 0:
+            print(current_player + " pick another pile!")
+            pile = input("Enter a, b, c, or d: ").lower()
+            while pile != "a" and pile != "b" and pile != "c" and pile != "d":
+                input_checker_pile(pile)
+                pile = input("Enter a, b, c, or d: ").lower()   
+            pile = pile_name(pile)
+            if pile == 0:
+                continue    
+            break    
+        pile = reverse_pile_name(pile)        
+        while True:
+            try:
+                counter = int(input("How many counters would you like to take out? "))
+                break
+            except ValueError:
+                print("Please enter a number!")
+        pile = pile_name(pile)  
+        while counter > pile:
+            low_counters(pile, counter)
+            counter = int(input("How many counters would you like to take out? "))
+        # Updates the piles by subtracting the original amount of counters in a pile by the amount the user picks up
+        pile = reverse_pile_name(pile)
+        if pile == "a":
+            a = a - counter
+        elif pile == "b":
+            b = b - counter
+        elif pile == "c":
+            c = c - counter    
+        elif pile == "d":
+            d = d - counter          
+        current_player = player_change(current_player)
+
+  
+    if a + b + c + d == 1:
+            final_counter(a, b, c, d, current_player) 
+            a = 0
+            b = 0
+            c = 0
+            d = 0          
+            input()
+    # If there are no more counters left, user is asked if they would like to play again  
+    if a + b + c + d == 0:
+        print("Game over!")
+        input()
+        play_again = input("Would you like to play again? ").lower()
+        while play_again != "yes" and play_again != "no":
+            print("Please enter yes or no!")  
+            play_again = input("Would you like to play again? ").lower()    
+        if play_again == "yes":
+            print("Alright!")
+            print("Restarting game... (DO NOT PRESS ANYTHING!)")
+            time.sleep(1)
+            continue
+        elif play_again == "no":
+            print("Thank you for playing!")
+            print("Powering off...")
+            time.sleep(1)
+            exit()
