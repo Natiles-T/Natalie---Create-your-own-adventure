@@ -193,13 +193,13 @@ while True:
         # Updates the piles by subtracting the original amount of counters in a pile by the amount the user picks up
         pile = reverse_pile_name(pile)
         if pile == "a":
-            a = a - counter
+            a -= counter
         elif pile == "b":
-            b = b - counter
+            b -= counter
         elif pile == "c":
-            c = c - counter    
+            c -= counter    
         elif pile == "d":
-            d = d - counter          
+            d -= counter          
         current_player = player_change(current_player)
 
   
