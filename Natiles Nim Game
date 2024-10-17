@@ -163,7 +163,7 @@ while True:
     current_player = player_change(current_player)     
 
     # Game Loop to allow players to now change piles once current pile is empty
-    while a + b + c + d > 1:    
+    while sum(a, b, c, d) > 1:    
         counter_display(a, b, c, d)
         print(current_player +"'s turn!")
         pile = pile_name(pile)
