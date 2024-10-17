@@ -165,6 +165,7 @@ while True:
     # Game Loop to allow players to now change piles once current pile is empty
     while a + b + c + d > 1:    
         counter_display(a, b, c, d)
+        input()
         print(current_player +"'s turn!")
         pile = pile_name(pile)
         # If there are no more counters in the pile, the user is forced to choose another pile
