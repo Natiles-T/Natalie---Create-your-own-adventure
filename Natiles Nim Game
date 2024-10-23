@@ -95,7 +95,24 @@ def player_change(current_player):
     else:
         current_player = player1
         return current_player        
- 
+
+def ai_move(pile):
+    # Randomly picks a decimal between 0 and 1. if # < 0.7, the ai will have the 70% win chance. If # > 0.7, the ai will play randomly.
+    ai_win_chance = random.random()
+    if ai_win_chance < 0.7:
+        counter = 1
+        return counter
+    elif ai_win_chance > 0.7:
+        counter = random.randint(1, pile)            
+        return counter
+
+def ai_new_pile(a, b, c, d):
+    piles = [a, b, c, d]
+    if pile in piles == 0:
+        piles.remove(pile)
+    # AI will randomly pick a new pile if the current pile has no more counters
+    new_pile = random.choice(piles)
+    return (new_pile)
 
 # Game;
 while True: 
@@ -109,6 +126,8 @@ while True:
     print("Welcome to Natalie's Nim game!")
     input()
     print("In this game, you and another player are to take counters out of 4 piles.")
+    input()
+    print("If you would like to verse an AI, please enter 'NIM AI' for Player 2's name!")
     input()
     print("You are allowed to pick up all counters in a pile at once!")
     input()
@@ -127,6 +146,9 @@ while True:
     input()
     player1 = input("Player 1, enter your name: ")
     player2 = input("Player 2, enter your name: ")
+    if player2 == "NIM AI" or player2.upper() == "NIM AI":
+        player2 = "NIM AI"
+
     current_player = player1
 
     # Turn 1 --> Player 1 picks a pile and takes some tiles out
@@ -171,22 +193,37 @@ while True:
         # If there are no more counters in the pile, the user is forced to choose another pile
         while pile == 0:
             print(current_player + " pick another pile!")
-            pile = input("Enter a, b, c, or d: ").lower()
-            while pile != "a" and pile != "b" and pile != "c" and pile != "d":
-                input_checker_pile(pile)
-                pile = input("Enter a, b, c, or d: ").lower()   
-            pile = pile_name(pile)
-            if pile == 0:
-                continue    
-            break    
-        pile = reverse_pile_name(pile)        
+            if player2 != "NIM AI" or current_player == player1:
+                pile = input("Enter a, b, c, or d: ").lower()
+                while pile != "a" and pile != "b" and pile != "c" and pile != "d":
+                    input_checker_pile(pile)
+                    pile = input("Enter a, b, c, or d: ").lower()   
+                pile = pile_name(pile)
+                if pile == 0:
+                    continue    
+                break    
+
+            # AI picks a new pile if player 2 is NIM AI
+            elif player2 == "NIM AI":
+                pile = ai_new_pile(a, b, c, d)      
+                print("NIM AI picks pile " + str(pile) + ".") 
+        pile = reverse_pile_name(pile)
         while True:
-            try:
-                counter = int(input("How many counters would you like to take out? "))
+            if player2 != "NIM AI" or current_player == player1:
+                try:
+                    counter = int(input("How many counters would you like to take out? "))
+                    break
+                except ValueError:
+                    print("Please enter a number!")
+            
+            # AI makes a move if player 2 is NIM AI
+            elif player2 == "NIM AI":
+                pile = pile_name(pile) 
+                counter = ai_move(pile)   
+                print("NIM AI removes " + str(counter) + " counters.")
+                pile = reverse_pile_name(pile)   
                 break
-            except ValueError:
-                print("Please enter a number!")
-        pile = pile_name(pile)  
+        pile = pile_name(pile)    
         while counter > pile:
             low_counters(pile, counter)
             counter = int(input("How many counters would you like to take out? "))
