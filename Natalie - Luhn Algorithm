@@ -66,7 +66,7 @@ def enterCustomerInfo():
             break
     while True:
         try:
-            credit_num = int(input("Enter your credit card number: "))
+            credit_num = input("Enter your credit card number without spaces: ")
             digi_credit = str(credit_num)
             while len(digi_credit) < 9:
                 print("Credit cards must have more than 9 digits. Please try again!")
@@ -78,7 +78,7 @@ def enterCustomerInfo():
             else:
                 break
         except ValueError:
-            print("Please enter numbers!")
+            print("Please enter numbers or remove spaces!")
             continue    
     
     # Creates a list of all the customer data and returns it as a variable.
@@ -119,11 +119,11 @@ def validateCreditCard(credit_num):
     credit_num = credit_num.split()
     credit_num.reverse()
     for i in range(len(credit_num)):
-        # Every other number in the list of numbers from 1 (odd numbers in 0 indexing)
-        if i % 2 == 1:
-            credit_num[i] = int(credit_num[i])
+        # Every other number in the list of numbers from 0 (evem numbers in 0 indexing)
+        credit_num[i] = int(credit_num[i])
+        if i % 2 == 0:
             odd_sum += credit_num[i]
-        # Eevery other number in the list of numbers from 0 (even number in 0 indexing)
+        # Every other number in the list of numbers from 1 (odd number in 0 indexing)
         else:
             credit_num[i] = int(credit_num[i])
             dbl_even = credit_num[i]*2
@@ -144,6 +144,7 @@ def generateCustomerDataFile(user_info):
             with open('natalie_luhnalgorithmcsv.csv', 'a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(user_info)
+            break
         except FileNotFoundError:
             print("Unable to find file 'natalie_luhnalgorithcsv.csv'.")
         
