@@ -1,0 +1,208 @@
+"""
+Natalie ("Partnered" with Louis)
+Luhn Algorith Assignment (Part 1 & 2)
+Assigned Date: November 12, 2024 (HEADSTART)
+Due Date:
+
+"""
+
+# Throughout this project, the use of data structures are not permitted (CHANGE: THEY ARE PERMITTED)
+# Minimal built in functions are to be used and the majority of functions must be created yourself
+
+# More packages may be imported in the space below if approved by your instructor
+
+def printMenu():
+    print('''
+          Customer and Sales System\n
+          1. Enter Customer Information\n
+          2. Generate Customer data file\n
+          3. Report on total Sales (Not done in this part)\n
+          4. Check for fraud in sales data (Not done in this part)\n
+          9. Quit\n
+          Enter menu option (1-9)
+          ''')
+
+def enterCustomerInfo():
+    try:
+        cust_id = 1
+        with open('natalie_luhnalgorithmcsv.csv', 'r', errors='ignore') as source:
+            for file_row, row in enumerate(source.readlines()):
+                if file_row == 0:
+                    continue
+                else:
+                    id_num = row[0]
+                    if str(cust_id) == id_num:
+                        cust_id += 1
+    except FileNotFoundError:
+        print("Unable to find file 'natalie_luhnalgorithmcsv.csv'.")
+    
+    first_name = input("Enter your first name: ")
+    while first_name == "":
+        print("Please enter your first name!")
+        first_name = input("Enter your first name: ")
+
+    last_name = input("Enter your last name: ")
+    while last_name == "":
+        print("Please enter your last name!")
+        last_name = input("Enter your last name: ")
+
+    city = input("Enter your city: ")
+    while city == "":
+        print("Please enter the city you currently live in!")
+        city = input("Enter your city: ")
+    
+    while True:
+        postal_code = input("Enter your Postal Code: ")
+        while len(postal_code) < 3:
+            print("Postal codes must have at least 3 characters. Please try again!")
+            postal_code = input("Enter your Postal Code: ")
+        po_check = postal_code[0:3]    
+        validatePostalCode(po_check)
+        if validatePostalCode(po_check) == False:
+            print("Please enter a valid postal code.")
+            continue
+        else:
+            postal_code = postal_code.upper()
+            break
+    while True:
+        try:
+            credit_num = int(input("Enter your credit card number: "))
+            digi_credit = str(credit_num)
+            while len(digi_credit) < 9:
+                print("Credit cards must have more than 9 digits. Please try again!")
+                credit_num = input(int("Enter your credit card number: "))
+            validateCreditCard(credit_num)
+            if validateCreditCard(credit_num) == False:
+                print("Please enter a valid credit card number.")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Please enter numbers!")
+            continue    
+    
+    # Creates a list of all the customer data and returns it as a variable.
+    # This variable will be used when generating and adding onto the customer data file.
+    user_info = [cust_id, first_name, last_name, city, postal_code, credit_num]
+    return user_info
+
+
+def validatePostalCode(po_check):
+    valid_po_nums = set()
+    # Opens the file with the list of postal codes.
+    try:
+        with open('postal_codes.csv', 'r', errors='ignore') as source:
+            for file_row, row in enumerate(source.readlines()):
+                if file_row == 0:
+                    continue
+                else:
+                    po_nums = row[0:3]
+                    # This takes the first 3 digits of each row in the file (the 3 identification characters of a CAD postal code)
+                    # and adds it to a set, where all the valid identification characters are stored.
+                    valid_po_nums.add(po_nums)
+    except FileNotFoundError:
+        print("Unable to find file 'postal_codes.csv'.")
+ 
+    if po_check.upper() not in valid_po_nums:
+        # If the first 3 characters of what the customer enters is NOT in the set of valid postal codes,
+        # the customer is directed back to enter a valid postal code. (Loops until they enter a valid postal code)
+        return False
+    else:
+        # If the first 3 characters of what the customer enters is in the set of valid postal codes, it passes the test.
+        return True
+
+def validateCreditCard(credit_num):
+    odd_sum = 0
+    even_sum = 0
+    # Reversing Credit Card numbers
+    credit_num = str(credit_num)
+    credit_num = credit_num.split()
+    credit_num.reverse()
+    for i in range(len(credit_num)):
+        # Every other number in the list of numbers from 1 (odd numbers in 0 indexing)
+        if i % 2 == 1:
+            credit_num[i] = int(credit_num[i])
+            odd_sum += credit_num[i]
+        # Eevery other number in the list of numbers from 0 (even number in 0 indexing)
+        else:
+            credit_num[i] = int(credit_num[i])
+            dbl_even = credit_num[i]*2
+            if dbl_even > 9:
+                dbl_even = dbl_even - 9
+            even_sum += dbl_even
+    total_sum = odd_sum + even_sum
+    if total_sum % 10 != 0:
+        return False
+    else:
+        return True
+
+def generateCustomerDataFile(user_info):
+    # Uses the list of customer info returned from enterCustomerinfo() and adds to the
+    # csv file storing the customer data.
+    while True:
+        try:
+            with open('natalie_luhnalgorithmcsv.csv', 'a', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(user_info)
+        except FileNotFoundError:
+            print("Unable to find file 'natalie_luhnalgorithcsv.csv'.")
+        
+
+####################################################################
+#       ADDITIONAL METHODS MAY BE ADDED BELOW IF NECESSARY         #
+####################################################################
+
+# IMPORTING CSV
+import csv
+
+# Opening the file where the customer information will be stored + adding the header.
+
+# Clears the CSV file in case there is anything left over from the last run
+while True:
+    try: 
+        with open('natalie_luhnalgorithmcsv.csv', 'r') as source:
+            for row in source:
+                row == ""
+
+        # Using method 'a' just APPENDS new rows to the file without the risk of overwriting anything
+
+        with open('natalie_luhnalgorithmcsv.csv', 'w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Customer ID", "First name", "Last name", "City", "Postal Code", "Credit Card Number"])
+        break
+    except FileNotFoundError:
+        print("Unable to find file 'natalie_luhnalgorithcsv.csv'.")
+        break
+    
+        
+####################################################################
+#                            MAIN PROGRAM                          #
+#           DO NOT EDIT ANY CODE EXCEPT WHERE INDICATED            #
+####################################################################
+
+# Do not edit any of these variables
+userInput = ""
+enterCustomerOption = "1"
+generateCustomerOption = "2"
+exitCondition = "9"
+
+# More variables for the main may be declared in the space below
+
+while userInput != exitCondition:
+    printMenu()                 # Printing out the main menu
+    userInput = input();        # User selection from the menu
+
+    if userInput == enterCustomerOption:
+        # Only the line below may be editted based on the parameter list and how you design the method return
+        # Any necessary variables may be added to this if section, but nowhere else in the code
+        user_info = enterCustomerInfo()
+
+    elif userInput == generateCustomerOption:
+        # Only the line below may be editted based on the parameter list and how you design the method return
+        generateCustomerDataFile(user_info)
+
+    else:
+        print("Please type in a valid option (A number from 1-9)")
+
+#Exits once the user types 
+print("Program Terminated")
