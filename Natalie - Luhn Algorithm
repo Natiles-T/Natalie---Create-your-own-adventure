@@ -115,21 +115,20 @@ def validateCreditCard(credit_num):
     odd_sum = 0
     even_sum = 0
     # Reversing Credit Card numbers
-    credit_num = str(credit_num)
-    credit_num = credit_num.split()
-    credit_num.reverse()
+    credit_num = str(credit_num)[::-1]
+    
     for i in range(len(credit_num)):
-        # Every other number in the list of numbers from 0 (evem numbers in 0 indexing)
-        credit_num[i] = int(credit_num[i])
+        digit = int(credit_num[i])
         if i % 2 == 0:
-            odd_sum += credit_num[i]
-        # Every other number in the list of numbers from 1 (odd number in 0 indexing)
+            # Add to odd_sum
+            odd_sum += digit
         else:
-            credit_num[i] = int(credit_num[i])
-            dbl_even = credit_num[i]*2
+            # Double the even position digits
+            dbl_even = digit * 2
             if dbl_even > 9:
-                dbl_even = dbl_even - 9
+                dbl_even -= 9 
             even_sum += dbl_even
+
     total_sum = odd_sum + even_sum
     if total_sum % 10 != 0:
         return False
